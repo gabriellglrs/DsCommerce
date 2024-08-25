@@ -2,6 +2,7 @@ package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_user")
-public class User {
+public class User implements Serializable {
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,7 @@ public class User {
      private String password;
 
      @OneToMany(mappedBy = "client")
-     List<Order> orders = new ArrayList<>();
+     private List<Order> orders = new ArrayList<>();
 
      public User() {
      }

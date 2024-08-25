@@ -2,12 +2,13 @@ package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_order")
-public class Order {
+public class Order implements Serializable {
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +22,18 @@ public class Order {
      @JoinColumn(name = "client_id")
      private User client;
 
+     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+     private Payment payment;
+
      public Order() {
      }
 
-     public Order(Long id, Instant moment, OrderStatus status, User client) {
+     public Order(Long id, Instant moment, OrderStatus status, User client, Payment payment) {
           this.id = id;
           this.moment = moment;
           this.status = status;
           this.client = client;
+          this.payment = payment;
      }
 
      public Long getId() {
@@ -63,6 +68,14 @@ public class Order {
           this.client = client;
      }
 
+     public Payment getPayment() {
+          return payment;
+     }
+
+     public void setPayment(Payment payment) {
+          this.payment = payment;
+     }
+
      @Override
      public boolean equals(Object o) {
           if (this == o) return true;
@@ -83,6 +96,7 @@ public class Order {
                   ", moment=" + moment +
                   ", status=" + status +
                   ", client=" + client +
+                  ", payment=" + payment +
                   '}';
      }
 }
