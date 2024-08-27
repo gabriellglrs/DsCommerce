@@ -1,11 +1,17 @@
 package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
@@ -15,43 +21,15 @@ public class Payment implements Serializable {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
 
-     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
      private Instant moment;
 
      @OneToOne
      @MapsId
      private Order order;
 
-     public Payment() {
-     }
-
      public Payment(Long id, Instant moment, Order order) {
           this.id = id;
           this.moment = moment;
-          this.order = order;
-     }
-
-     public Long getId() {
-          return id;
-     }
-
-     public void setId(Long id) {
-          this.id = id;
-     }
-
-     public Instant getMoment() {
-          return moment;
-     }
-
-     public void setMoment(Instant moment) {
-          this.moment = moment;
-     }
-
-     public Order getOrder() {
-          return order;
-     }
-
-     public void setOrder(Order order) {
           this.order = order;
      }
 
@@ -66,14 +44,5 @@ public class Payment implements Serializable {
      @Override
      public int hashCode() {
           return Objects.hashCode(id);
-     }
-
-     @Override
-     public String toString() {
-          return "Payment{" +
-                  "id=" + id +
-                  ", moment=" + moment +
-                  ", order=" + order +
-                  '}';
      }
 }
