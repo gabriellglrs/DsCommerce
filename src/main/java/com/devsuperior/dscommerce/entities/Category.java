@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {
@@ -32,18 +34,5 @@ public class Category implements Serializable {
      public Category(Long id, String name) {
           this.id = id;
           this.name = name;
-     }
-
-     @Override
-     public boolean equals(Object o) {
-          if (this == o) return true;
-          if (o == null || getClass() != o.getClass()) return false;
-          Category category = (Category) o;
-          return Objects.equals(id, category.id);
-     }
-
-     @Override
-     public int hashCode() {
-          return Objects.hashCode(id);
      }
 }

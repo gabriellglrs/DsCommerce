@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,12 +11,12 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
@@ -26,7 +27,6 @@ public class Order implements Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private  Long id;
-
      private Instant moment;
      private OrderStatus status;
 
@@ -50,18 +50,5 @@ public class Order implements Serializable {
 
      public List<Product> getProducts() {
           return items.stream().map(OrderItem::getProduct).toList();
-     }
-
-     @Override
-     public boolean equals(Object o) {
-          if (this == o) return true;
-          if (o == null || getClass() != o.getClass()) return false;
-          Order order = (Order) o;
-          return Objects.equals(id, order.id);
-     }
-
-     @Override
-     public int hashCode() {
-          return Objects.hashCode(id);
      }
 }

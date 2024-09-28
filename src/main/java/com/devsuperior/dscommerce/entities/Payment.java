@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,11 +9,11 @@ import lombok.Setter;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.Objects;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
@@ -23,7 +24,6 @@ public class Payment implements Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
-
      private Instant moment;
 
      @OneToOne
@@ -34,18 +34,5 @@ public class Payment implements Serializable {
           this.id = id;
           this.moment = moment;
           this.order = order;
-     }
-
-     @Override
-     public boolean equals(Object o) {
-          if (this == o) return true;
-          if (o == null || getClass() != o.getClass()) return false;
-          Payment payment = (Payment) o;
-          return Objects.equals(id, payment.id);
-     }
-
-     @Override
-     public int hashCode() {
-          return Objects.hashCode(id);
      }
 }

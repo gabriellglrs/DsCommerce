@@ -1,0 +1,65 @@
+[33mcommit d605582bb9d53c98f49a33b935703b95e7c20be5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gabriellglrs <gabriellglrs@gmail.com>
+Date:   Sun Sep 1 23:25:10 2024 -0300
+
+    GET  Products paged
+
+[33mcommit ab68f8c949a914c4ba94743758a27508bcb71f8d[m
+Author: gabriellglrs <gabriellglrs@gmail.com>
+Date:   Fri Aug 30 20:05:42 2024 -0300
+
+    insert @Serial and entities
+
+[33mcommit c174f1269959ed64f30ba50cf2c307753a2b4d49[m
+Author: gabriellglrs <gabriellglrs@gmail.com>
+Date:   Thu Aug 29 13:27:08 2024 -0300
+
+    OrderStatus
+
+[33mcommit 6490dcf130dd5cdb73ad1f6bd71ca4488765c712[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Thu Aug 29 00:23:54 2024 -0300
+
+    new ProductDTO and ProductService
+
+[33mcommit be88a703eaae4f8a54478d4b929b39cbc46a86f0[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Wed Aug 28 20:56:36 2024 -0300
+
+    new Package: DTO, controllers, repositories, services
+
+[33mcommit 9442dd97061d78e7158815553c5947988bc36e22[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Tue Aug 27 18:19:01 2024 -0300
+
+    new file: import.sql and Lombok
+
+[33mcommit b39a7967c96aee43fffc29c1e9dc403b13a6a2aa[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Mon Aug 26 00:06:13 2024 -0300
+
+    Entities modified: Order and Product
+
+[33mcommit c87183912bfef4d9eb2615d2651c94238bfa9705[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Sun Aug 25 23:55:22 2024 -0300
+
+    Entities new file OrderItemPK modified: Order and Product
+
+[33mcommit 2123b243826daaf2bcfe3844a579264544072f5c[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Sun Aug 25 19:49:41 2024 -0300
+
+    Entities Product and Payment
+
+[33mcommit a08c60a2e1abd75a4c15144d72c0b1285d4b079f[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Sun Aug 25 18:27:30 2024 -0300
+
+    Entity payment
+
+[33mcommit 18b17ec2cc48a173aae6f9dd23c5dad053c1908c[m
+Author: GABRIEL LUCAS <119793695+gabriellglrs@users.noreply.github.com>
+Date:   Sun Aug 25 17:23:58 2024 -0300
+
+    Initial commit
