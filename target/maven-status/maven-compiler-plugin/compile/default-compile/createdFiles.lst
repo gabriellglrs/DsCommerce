@@ -1,0 +1,13 @@
+com\devsuperior\dscommerce\entities\User.class
+com\devsuperior\dscommerce\entities\OrderStatus.class
+com\devsuperior\dscommerce\Start.class
+com\devsuperior\dscommerce\repositories\ProductRepository.class
+com\devsuperior\dscommerce\entities\OrderItemPK.class
+com\devsuperior\dscommerce\entities\Category.class
+com\devsuperior\dscommerce\entities\OrderItem.class
+com\devsuperior\dscommerce\DTO\ProductDTO.class
+com\devsuperior\dscommerce\controllers\ProductController.class
+com\devsuperior\dscommerce\entities\Order.class
+com\devsuperior\dscommerce\entities\Payment.class
+com\devsuperior\dscommerce\services\ProductService.class
+com\devsuperior\dscommerce\entities\Product.class

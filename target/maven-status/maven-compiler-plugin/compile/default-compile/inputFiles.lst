@@ -1,0 +1,13 @@
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\controllers\ProductController.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\DTO\ProductDTO.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\Category.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\Order.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\OrderItem.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\OrderItemPK.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\OrderStatus.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\Payment.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\Product.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\entities\User.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\repositories\ProductRepository.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\services\ProductService.java
+C:\Dev\DsCommerce\src\main\java\com\devsuperior\dscommerce\Start.java
