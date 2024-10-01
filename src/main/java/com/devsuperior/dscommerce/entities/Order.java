@@ -27,6 +27,8 @@ public class Order implements Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private  Long id;
+
+     @Column(columnDefinition = "DATETIME")
      private Instant moment;
      private OrderStatus status;
 

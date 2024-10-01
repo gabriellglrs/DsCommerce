@@ -24,6 +24,7 @@ public class Payment implements Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
+     @Column(columnDefinition = "DATETIME")
      private Instant moment;
 
      @OneToOne
