@@ -33,7 +33,7 @@ public class ProductController {
      @GetMapping(value = "/{id}")
      public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
           ProductDTO dto = service.findById(id);
-         return ResponseEntity.ok(dto);
+          return ResponseEntity.ok(dto);
      }
 
      // GET READ = (Buscar todos os produtos com paginação)

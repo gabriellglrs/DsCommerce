@@ -11,6 +11,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/dscommerce
       SPRING_DATASOURCE_USERNAME: admin
       SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
+      SPRING_JPA_SHOW_SQL: "true"
     depends_on:
       - db
 
