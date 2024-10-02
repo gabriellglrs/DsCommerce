@@ -1,10 +1,7 @@
 package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -45,5 +42,4 @@ public class User implements Serializable {
           this.birthDate = birthDate;
           this.password = password;
      }
-
 }

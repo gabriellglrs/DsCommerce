@@ -2,7 +2,8 @@ package com.devsuperior.dscommerce.controllers;
 
 import com.devsuperior.dscommerce.DTO.ProductDTO;
 import com.devsuperior.dscommerce.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -13,12 +14,16 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @RequestMapping(value = "/products")
 public class ProductController {
 
-     @Autowired
+
      private ProductService service;
+
+     public ProductController(ProductService service) {
+          this.service = service;
+     }
 
      // POST - Create (Criar um novo produto)
      @PostMapping
-     public ResponseEntity<ProductDTO> create(@RequestBody ProductDTO dto) {
+     public ResponseEntity<ProductDTO> create(@Valid @RequestBody ProductDTO dto) {
           ProductDTO newDto = service.create(dto);
           return ResponseEntity
                   .created(ServletUriComponentsBuilder
@@ -45,7 +50,7 @@ public class ProductController {
 
      // PUT UPDATE = (Buscar todos os produtos com paginação)
      @PutMapping(value = "/{id}")
-     public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto) {
+     public ResponseEntity<ProductDTO> update(@PathVariable Long id,@Valid @RequestBody ProductDTO dto) {
           ProductDTO updatedDto = service.update(id, dto);
           return ResponseEntity.ok(updatedDto);
      }
