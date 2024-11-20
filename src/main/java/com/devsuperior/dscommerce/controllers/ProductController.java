@@ -14,8 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @RequestMapping(value = "/products")
 public class ProductController {
 
-
-     private ProductService service;
+     private final ProductService service;
 
      public ProductController(ProductService service) {
           this.service = service;

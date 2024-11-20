@@ -1,6 +1,5 @@
-package com.devsuperior.dscommerce.DTO;
+package com.devsuperior.dscommerce.exceptions.handler.error;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;

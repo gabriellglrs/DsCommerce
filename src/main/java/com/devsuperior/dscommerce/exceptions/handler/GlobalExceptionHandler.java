@@ -1,7 +1,9 @@
-package com.devsuperior.dscommerce.exceptions;
+package com.devsuperior.dscommerce.exceptions.handler;
 
-import com.devsuperior.dscommerce.DTO.CustomError;
-import com.devsuperior.dscommerce.DTO.ValidationError;
+import com.devsuperior.dscommerce.exceptions.handler.error.CustomError;
+import com.devsuperior.dscommerce.exceptions.handler.error.ValidationError;
+import com.devsuperior.dscommerce.exceptions.DatabaseException;
+import com.devsuperior.dscommerce.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

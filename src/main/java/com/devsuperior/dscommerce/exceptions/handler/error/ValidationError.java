@@ -1,12 +1,10 @@
-package com.devsuperior.dscommerce.DTO;
+package com.devsuperior.dscommerce.exceptions.handler.error;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +19,4 @@ public class ValidationError extends CustomError {
      public void addError(String fieldName, String message) {
           errors.add(new FieldError(fieldName, message));
      }
-
-     @Getter
-     @NoArgsConstructor
-     @AllArgsConstructor
-     public static class FieldError {
-          private String fieldName;
-          private String errorMessage;
-     }
-
 }
