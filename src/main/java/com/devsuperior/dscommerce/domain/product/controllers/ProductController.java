@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.domain.product.controllers;
 
-import com.devsuperior.dscommerce.domain.product.DTO.ProductDTO;
+import com.devsuperior.dscommerce.domain.product.dto.ProductDto;
+import com.devsuperior.dscommerce.domain.product.dto.ProductMinDto;
 import com.devsuperior.dscommerce.domain.product.services.ProductService;
 import jakarta.validation.Valid;
 
@@ -24,8 +25,8 @@ public class ProductController {
      // POST - Create (Criar um novo produto)
      @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
      @PostMapping
-     public ResponseEntity<ProductDTO> create(@Valid @RequestBody ProductDTO dto) {
-          ProductDTO newDto = service.create(dto);
+     public ResponseEntity<ProductDto> create(@Valid @RequestBody ProductDto dto) {
+          ProductDto newDto = service.create(dto);
           return ResponseEntity
                   .created(ServletUriComponentsBuilder
                           .fromCurrentRequest()
@@ -38,24 +39,24 @@ public class ProductController {
      // GET READ = (Buscar um produto por ID)
      @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
      @GetMapping(value = "/{id}")
-     public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
-          ProductDTO dto = service.findById(id);
+     public ResponseEntity<ProductDto> findById(@PathVariable Long id) {
+          ProductDto dto = service.findById(id);
           return ResponseEntity.ok(dto);
      }
 
      // GET READ = (Buscar todos os produtos com paginação)
      @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
      @GetMapping
-     public ResponseEntity<Page<ProductDTO>> findAll(@RequestParam(name = "name", defaultValue = "") String name, Pageable pageable) {
-          Page<ProductDTO> dtoList = service.findAll(name, pageable);
+     public ResponseEntity<Page<ProductMinDto>> findAll(@RequestParam(name = "name", defaultValue = "") String name, Pageable pageable) {
+          Page<ProductMinDto> dtoList = service.findAll(name, pageable);
           return ResponseEntity.ok(dtoList);
      }
 
      // PUT UPDATE = (Buscar todos os produtos com paginação)
      @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
      @PutMapping(value = "/{id}")
-     public ResponseEntity<ProductDTO> update(@PathVariable Long id,@Valid @RequestBody ProductDTO dto) {
-          ProductDTO updatedDto = service.update(id, dto);
+     public ResponseEntity<ProductDto> update(@PathVariable Long id, @Valid @RequestBody ProductDto dto) {
+          ProductDto updatedDto = service.update(id, dto);
           return ResponseEntity.ok(updatedDto);
      }
 

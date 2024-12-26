@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.domain.product.services;
 
-import com.devsuperior.dscommerce.domain.product.DTO.ProductDTO;
+import com.devsuperior.dscommerce.domain.product.dto.ProductDto;
+import com.devsuperior.dscommerce.domain.product.dto.ProductMinDto;
 import com.devsuperior.dscommerce.domain.product.entities.Product;
 import com.devsuperior.dscommerce.exceptions.DatabaseException;
 import com.devsuperior.dscommerce.exceptions.ResourceNotFoundException;
@@ -24,37 +25,37 @@ public class ProductService {
 
      // Create (Inserir um novo produto)
      @Transactional
-     public ProductDTO create(ProductDTO dto) {
+     public ProductDto create(ProductDto dto) {
           Product product = new Product();
           copyDtoToEntity(dto, product);
           product = repository.save(product);
-          return new ProductDTO(product);
+          return new ProductDto(product);
      }
 
      // Read (Buscar um produto por ID)
      @Transactional(readOnly = true)
-     public ProductDTO findById(Long id) {
+     public ProductDto findById(Long id) {
           Product product = repository.findById(id)
                   .orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado: " + id));
-          return new ProductDTO(product);
+          return new ProductDto(product);
      }
 
      // Read (Buscar todos os produtos com paginação)
      @Transactional(readOnly = true)
-     public Page<ProductDTO> findAll(String name, Pageable pageable) {
+     public Page<ProductMinDto> findAll(String name, Pageable pageable) {
           Page<Product> result = repository.searchByName(name, pageable);
-          return result.map(ProductDTO::new);
+          return result.map(ProductMinDto::new);
      }
 
 
      // Update (Atualizar um produto existente)
      @Transactional
-     public ProductDTO update(Long id, ProductDTO dto) {
+     public ProductDto update(Long id, ProductDto dto) {
           try {
                Product product = repository.getReferenceById(id);
                copyDtoToEntity(dto, product);
                product = repository.save(product);
-               return new ProductDTO(product);
+               return new ProductDto(product);
           } catch (EntityNotFoundException e) {
                throw new ResourceNotFoundException("ID não encontrado: " + id);
           }
@@ -74,7 +75,7 @@ public class ProductService {
      }
 
      // Método utilitário para copiar os dados do DTO para a entidade
-     private void copyDtoToEntity(ProductDTO dto, Product product) {
+     private void copyDtoToEntity(ProductDto dto, Product product) {
           product.setName(dto.getName());
           product.setDescription(dto.getDescription());
           product.setPrice(dto.getPrice());

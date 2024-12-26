@@ -1,4 +1,4 @@
-package com.devsuperior.dscommerce.domain.product.DTO;
+package com.devsuperior.dscommerce.domain.product.dto;
 
 
 import com.devsuperior.dscommerce.domain.product.entities.Product;
@@ -12,7 +12,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class ProductDTO {
+public class ProductDto {
         private Long id;
 
         @Size(min = 3, max = 80, message = "nome presisar ter de 3 a 80 caracteres")
@@ -28,7 +28,7 @@ public class ProductDTO {
 
         private String imgUrl;
 
-        public ProductDTO(Product product) {
+        public ProductDto(Product product) {
                 id = product.getId();
                 name = product.getName();
                 description = product.getDescription();
