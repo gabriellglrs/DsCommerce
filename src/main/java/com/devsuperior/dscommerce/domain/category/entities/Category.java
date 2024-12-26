@@ -1,5 +1,6 @@
-package com.devsuperior.dscommerce.entities;
+package com.devsuperior.dscommerce.domain.category.entities;
 
+import com.devsuperior.dscommerce.domain.product.entities.Product;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -8,15 +9,16 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.*;
+
 
 @NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
 @Entity
-@Table(name = "tb_payment")
-public class Payment implements Serializable {
+@Table(name = "tb_category")
+public class Category implements Serializable {
 
      @Serial
      private static final long serialVersionUID = 1L;
@@ -24,16 +26,14 @@ public class Payment implements Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
-     @Column(columnDefinition = "DATETIME")
-     private Instant moment;
 
-     @OneToOne
-     @MapsId
-     private Order order;
+     private String name;
 
-     public Payment(Long id, Instant moment, Order order) {
+     @ManyToMany(mappedBy = "categories")
+     private Set<Product> products = new HashSet<>();
+
+     public Category(Long id, String name) {
           this.id = id;
-          this.moment = moment;
-          this.order = order;
+          this.name = name;
      }
 }

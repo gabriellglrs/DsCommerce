@@ -55,8 +55,8 @@ INSERT INTO tb_product_category (product_id, category_id) VALUES (23, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (24, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (25, 3);
 
-INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Maria Brown', 'maria@gmail.com', '988888888', '123456', '2001-07-25');
-INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Alex Green', 'alex@gmail.com', '977777777', '123456', '1987-12-13');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Maria Brown', 'maria@gmail.com', '988888888', '$2a$10$s0aE6BlolyvRNnjtIkuCgOFze5biYuZ.vuzSXZUhVe8Ig7rbJ5m5C', '2001-07-25');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Alex Green', 'alex@gmail.com', '977777777', '$2a$10$Z/lIGMmnM5r4QMp8NYsrRuQCR.FqAKW8cpNZxcsHy1EjNUO9ksyIm', '1987-12-13');
 
 INSERT INTO tb_order (moment, status, client_id) VALUES ('2022-07-25 13:00:00', 1, 1);
 INSERT INTO tb_order (moment, status, client_id) VALUES ('2022-07-29 15:50:00', 3, 2);
@@ -69,3 +69,12 @@ INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (3, 1, 
 
 INSERT INTO tb_payment (order_id, moment) VALUES (1, '2022-07-25 15:00:00');
 INSERT INTO tb_payment (order_id, moment) VALUES (2, '2022-07-30 11:00:00');
+
+-- Inserindo roles (permissões) na tabela tb_role
+INSERT INTO tb_role (authority) VALUES ('ROLE_USER'); -- Permissão de administrador
+INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN'); -- Permissão de operador
+
+-- Associando usuários às roles na tabela intermediária tb_user_role
+INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1); -- Alex recebe a permissão ROLE_ADMIN
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1); -- Maria recebe a permissão ROLE_ADMIN
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2); -- Maria também recebe a permissão ROLE_OPERATOR

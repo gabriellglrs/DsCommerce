@@ -1,5 +1,9 @@
-package com.devsuperior.dscommerce.entities;
+package com.devsuperior.dscommerce.domain.order.entities;
 
+import com.devsuperior.dscommerce.domain.order.enums.OrderStatus;
+import com.devsuperior.dscommerce.domain.product.entities.Product;
+import com.devsuperior.dscommerce.domain.Payment.entities.Payment;
+import com.devsuperior.dscommerce.domain.User.entities.User;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

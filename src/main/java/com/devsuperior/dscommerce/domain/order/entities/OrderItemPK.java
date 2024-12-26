@@ -1,5 +1,6 @@
-package com.devsuperior.dscommerce.entities;
+package com.devsuperior.dscommerce.domain.order.entities;
 
+import com.devsuperior.dscommerce.domain.product.entities.Product;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

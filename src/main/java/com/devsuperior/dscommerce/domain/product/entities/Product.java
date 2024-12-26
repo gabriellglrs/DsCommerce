@@ -1,5 +1,8 @@
-package com.devsuperior.dscommerce.entities;
+package com.devsuperior.dscommerce.domain.product.entities;
 
+import com.devsuperior.dscommerce.domain.category.entities.Category;
+import com.devsuperior.dscommerce.domain.order.entities.Order;
+import com.devsuperior.dscommerce.domain.order.entities.OrderItem;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +15,6 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_product")
 public class Product implements Serializable {

@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: ${APP_PROFILE:test}  # Define o perfil ativo do Spring
   datasource:
     url: jdbc:mysql://localhost:3308/dscommerce
     username: admin
@@ -7,18 +9,24 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate:
         format_sql: true
-        use_sql_comments: true
-        generate_statistics: true
+  open-in-view: false  # Desativa o 'open-in-view' para evitar problemas de performance
+
+security:
+  client-id: ${CLIENT_ID:myclientid}  # ID do cliente para autenticação
+  client-secret: ${CLIENT_SECRET:myclientsecret}  # Segredo do cliente
+  jwt:
+    duration: ${JWT_DURATION:86400}  # Duração do token JWT em segundos (24 horas por padrão)
+
+cors:
+  origins: ${CORS_ORIGINS:http://localhost:3000,http://localhost:5173}  # Origens permitidas para CORS
 
 server:
   port: 8080
   servlet:
-    context-path: /minha-aplicacao
-
-
+    context-path: /api  # Caminho base da API

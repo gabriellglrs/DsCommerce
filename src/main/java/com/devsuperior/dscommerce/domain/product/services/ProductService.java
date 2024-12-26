@@ -1,10 +1,10 @@
-package com.devsuperior.dscommerce.services;
+package com.devsuperior.dscommerce.domain.product.services;
 
-import com.devsuperior.dscommerce.DTO.ProductDTO;
-import com.devsuperior.dscommerce.entities.Product;
+import com.devsuperior.dscommerce.domain.product.DTO.ProductDTO;
+import com.devsuperior.dscommerce.domain.product.entities.Product;
 import com.devsuperior.dscommerce.exceptions.DatabaseException;
 import com.devsuperior.dscommerce.exceptions.ResourceNotFoundException;
-import com.devsuperior.dscommerce.repositories.ProductRepository;
+import com.devsuperior.dscommerce.domain.product.repositories.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -41,8 +41,8 @@ public class ProductService {
 
      // Read (Buscar todos os produtos com paginação)
      @Transactional(readOnly = true)
-     public Page<ProductDTO> findAll(Pageable pageable) {
-          Page<Product> result = repository.findAll(pageable);
+     public Page<ProductDTO> findAll(String name, Pageable pageable) {
+          Page<Product> result = repository.searchByName(name, pageable);
           return result.map(ProductDTO::new);
      }
 
@@ -75,9 +75,9 @@ public class ProductService {
 
      // Método utilitário para copiar os dados do DTO para a entidade
      private void copyDtoToEntity(ProductDTO dto, Product product) {
-          product.setName(dto.name());
-          product.setDescription(dto.description());
-          product.setPrice(dto.price());
-          product.setImgUrl(dto.imgUrl());
+          product.setName(dto.getName());
+          product.setDescription(dto.getDescription());
+          product.setPrice(dto.getPrice());
+          product.setImgUrl(dto.getImgUrl());
      }
 }
