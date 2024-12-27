@@ -2,20 +2,19 @@ package com.devsuperior.dscommerce.domain.category.entities;
 
 import com.devsuperior.dscommerce.domain.product.entities.Product;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {

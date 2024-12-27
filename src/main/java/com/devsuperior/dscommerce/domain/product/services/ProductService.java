@@ -1,5 +1,8 @@
 package com.devsuperior.dscommerce.domain.product.services;
 
+import com.devsuperior.dscommerce.domain.category.dto.CategoryDto;
+import com.devsuperior.dscommerce.domain.category.entities.Category;
+import com.devsuperior.dscommerce.domain.category.repository.CategoryRepository;
 import com.devsuperior.dscommerce.domain.product.dto.ProductDto;
 import com.devsuperior.dscommerce.domain.product.dto.ProductMinDto;
 import com.devsuperior.dscommerce.domain.product.entities.Product;
@@ -7,6 +10,7 @@ import com.devsuperior.dscommerce.exceptions.DatabaseException;
 import com.devsuperior.dscommerce.exceptions.ResourceNotFoundException;
 import com.devsuperior.dscommerce.domain.product.repositories.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,9 +22,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductService {
 
      private final ProductRepository repository;
+     private final CategoryRepository categoryRepository;
 
-     public ProductService(ProductRepository repository) {
+     @Autowired
+     public ProductService(ProductRepository repository, CategoryRepository categoryRepository) {
           this.repository = repository;
+          this.categoryRepository = categoryRepository;
      }
 
      // Create (Inserir um novo produto)
@@ -80,5 +87,11 @@ public class ProductService {
           product.setDescription(dto.getDescription());
           product.setPrice(dto.getPrice());
           product.setImgUrl(dto.getImgUrl());
+
+          product.getCategories().clear();
+          for (CategoryDto categoryDto : dto.getCategories()) {
+               Category category = categoryRepository.getReferenceById(categoryDto.getId());
+               product.getCategories().add(category);
+          }
      }
 }

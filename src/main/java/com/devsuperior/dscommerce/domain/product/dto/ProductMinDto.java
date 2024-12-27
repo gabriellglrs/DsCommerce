@@ -1,7 +1,6 @@
 package com.devsuperior.dscommerce.domain.product.dto;
 
 import com.devsuperior.dscommerce.domain.product.entities.Product;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
