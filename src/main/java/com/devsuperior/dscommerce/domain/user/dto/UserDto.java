@@ -1,7 +1,6 @@
-package com.devsuperior.dscommerce.domain.User.dto;
+package com.devsuperior.dscommerce.domain.user.dto;
 
-import com.devsuperior.dscommerce.domain.User.entities.Role;
-import com.devsuperior.dscommerce.domain.User.entities.User;
+import com.devsuperior.dscommerce.domain.user.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

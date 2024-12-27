@@ -1,14 +1,11 @@
-package com.devsuperior.dscommerce.domain.Payment.entities;
+package com.devsuperior.dscommerce.domain.payment.entities;
 
 import com.devsuperior.dscommerce.domain.order.entities.Order;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.Instant;
 
 @NoArgsConstructor

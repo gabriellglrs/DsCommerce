@@ -1,6 +1,6 @@
-package com.devsuperior.dscommerce.domain.User.entities;
+package com.devsuperior.dscommerce.domain.user.entities;
 
-import com.devsuperior.dscommerce.domain.User.enums.RoleType;
+import com.devsuperior.dscommerce.domain.user.enums.RoleType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

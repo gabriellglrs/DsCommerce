@@ -1,18 +1,14 @@
-package com.devsuperior.dscommerce.domain.User.entities;
+package com.devsuperior.dscommerce.domain.user.entities;
 
-import com.devsuperior.dscommerce.domain.User.enums.RoleType;
 import com.devsuperior.dscommerce.domain.order.entities.Order;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 @NoArgsConstructor

@@ -1,7 +1,7 @@
-package com.devsuperior.dscommerce.domain.User.controllers;
+package com.devsuperior.dscommerce.domain.user.controllers;
 
-import com.devsuperior.dscommerce.domain.User.dto.UserDto;
-import com.devsuperior.dscommerce.domain.User.service.UserService;
+import com.devsuperior.dscommerce.domain.user.dto.UserDto;
+import com.devsuperior.dscommerce.domain.user.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

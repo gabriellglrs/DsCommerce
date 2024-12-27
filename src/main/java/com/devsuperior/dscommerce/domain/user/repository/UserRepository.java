@@ -1,7 +1,7 @@
-package com.devsuperior.dscommerce.domain.User.repository;
+package com.devsuperior.dscommerce.domain.user.repository;
 
-import com.devsuperior.dscommerce.domain.User.entities.User;
-import com.devsuperior.dscommerce.domain.User.projections.UserDetailsProjection;
+import com.devsuperior.dscommerce.domain.user.entities.User;
+import com.devsuperior.dscommerce.projections.UserDetailsProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

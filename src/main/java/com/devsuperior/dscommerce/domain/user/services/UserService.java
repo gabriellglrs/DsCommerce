@@ -1,11 +1,11 @@
-package com.devsuperior.dscommerce.domain.User.service;
+package com.devsuperior.dscommerce.domain.user.services;
 
-import com.devsuperior.dscommerce.domain.User.dto.UserDto;
-import com.devsuperior.dscommerce.domain.User.entities.Role;
-import com.devsuperior.dscommerce.domain.User.entities.User;
-import com.devsuperior.dscommerce.domain.User.enums.RoleType;
-import com.devsuperior.dscommerce.domain.User.projections.UserDetailsProjection;
-import com.devsuperior.dscommerce.domain.User.repository.UserRepository;
+import com.devsuperior.dscommerce.domain.user.dto.UserDto;
+import com.devsuperior.dscommerce.domain.user.entities.Role;
+import com.devsuperior.dscommerce.domain.user.entities.User;
+import com.devsuperior.dscommerce.domain.user.enums.RoleType;
+import com.devsuperior.dscommerce.projections.UserDetailsProjection;
+import com.devsuperior.dscommerce.domain.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,4 +1,4 @@
-package com.devsuperior.dscommerce.domain.User.projections;
+package com.devsuperior.dscommerce.projections;
 
 public interface UserDetailsProjection {
      String getUsername();
