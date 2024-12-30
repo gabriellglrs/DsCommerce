@@ -1,11 +1,10 @@
 package com.devsuperior.dscommerce.domain.order.entities;
 
 import com.devsuperior.dscommerce.domain.order.enums.OrderStatus;
-import com.devsuperior.dscommerce.domain.product.entities.Product;
 import com.devsuperior.dscommerce.domain.payment.entities.Payment;
+import com.devsuperior.dscommerce.domain.product.entities.Product;
 import com.devsuperior.dscommerce.domain.user.entities.User;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +19,6 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {

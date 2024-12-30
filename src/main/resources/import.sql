@@ -71,8 +71,8 @@ INSERT INTO tb_payment (order_id, moment) VALUES (1, '2022-07-25 15:00:00');
 INSERT INTO tb_payment (order_id, moment) VALUES (2, '2022-07-30 11:00:00');
 
 -- Inserindo roles (permissões) na tabela tb_role
-INSERT INTO tb_role (authority) VALUES ('ROLE_USER'); -- Permissão de administrador
-INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN'); -- Permissão de operador
+INSERT INTO tb_role (authority) VALUES ('ROLE_USER');
+INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
 
 -- Associando usuários às roles na tabela intermediária tb_user_role
 INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1); -- Alex recebe a permissão ROLE_ADMIN

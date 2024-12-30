@@ -1,5 +1,6 @@
 package com.devsuperior.dscommerce.exceptions.handler;
 
+import com.devsuperior.dscommerce.exceptions.ForbbidenException;
 import com.devsuperior.dscommerce.exceptions.handler.error.CustomError;
 import com.devsuperior.dscommerce.exceptions.handler.error.ValidationError;
 import com.devsuperior.dscommerce.exceptions.DatabaseException;
@@ -35,6 +36,21 @@ public class GlobalExceptionHandler {
      @ExceptionHandler({DatabaseException.class})
      public ResponseEntity<CustomError> Database(DatabaseException e, HttpServletRequest request) {
           HttpStatus status = HttpStatus.BAD_REQUEST;
+
+          CustomError err = CustomError.builder()
+                  .error(e.getMessage())
+                  .timestamp(Instant.now())
+                  .path(request.getRequestURI())
+                  .status(status.value())
+                  .build();
+
+          return ResponseEntity.status(status).body(err);
+     }
+
+     // Tratando DatabaseException
+     @ExceptionHandler({ForbbidenException.class})
+     public ResponseEntity<CustomError> forbidden(ForbbidenException e, HttpServletRequest request) {
+          HttpStatus status = HttpStatus.FORBIDDEN;
 
           CustomError err = CustomError.builder()
                   .error(e.getMessage())

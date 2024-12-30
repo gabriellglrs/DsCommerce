@@ -31,8 +31,8 @@ public class UserService implements UserDetailsService {
      public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
           List<UserDetailsProjection> result = repository.searchUserAndRolesByEmail(username);
 
-          if (result.size() == 0) {
-               throw new com.devsuperior.dscommerce.exceptions.UsernameNotFoundException("User nao existe");
+          if (result.isEmpty()) {
+               throw new UsernameNotFoundException("User nao existe");
           }
 
           User user = new User();
@@ -45,7 +45,7 @@ public class UserService implements UserDetailsService {
           return user;
      }
 
-     protected User authenticated() {
+     public User authenticated() {
           try {
                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
                Jwt jwtPrincipal = (Jwt) authentication.getPrincipal();
