@@ -19,7 +19,7 @@ public class AuthService {
      public void validationSelfOfAdmin(Long userId) {
           User me = userService.authenticated();
           if (!me.hasRole("ROLE_ADMIN") && !me.getId().equals(userId)) {
-               throw new ForbbidenException("Acesso Negado!");
+               throw new ForbbidenException("Acesso Negado! - Usuario: " + me.getName() + " | Email: " + me.getEmail());
           }
      }
 }
